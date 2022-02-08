@@ -1,0 +1,17 @@
+*{
+    margin: 0;padding: 0;
+}
+body{
+    margin: 0;
+    padding: 0;
+    
+}
+canvas{
+    border: 2px solid white;
+    /* height: 98.53vh;
+    width: 370px; */
+}
+p{
+    color: azure;
+    text-align: center;
+}

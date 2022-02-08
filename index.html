@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="clock.css">
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+      }
+      div{
+          color: lime;
+          font-size: 60px;
+          position: absolute;
+          top: 40%;
+          left: 35%;
+          letter-spacing: 8px;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="Clock"></div>
+    <canvas class="Canvas"></canvas>
+    <script src="clock.js"></script>
+    <p>&copy; Copyright <strong><a href="https://github.com/UMARFAROOQMULLA" target="_blank">UmarFarooq Mulla</a></strong>. All Rights Reserved</p>
+  </body>
+  <script>
+    function showtime() {
+      var date = new Date();
+      var h = date.getHours();
+      var m = date.getMinutes();
+      var s = date.getSeconds();
+      var ms = date.getMilliseconds();
+      var ap = "AM";
+      if (h > 12) {
+        h = h - 12;
+        ap = "PM";
+      }
+      h= h<10?"0"+h:h;
+      s= s<10?"0"+s:s;
+      m= m<10?"0"+m:m;
+      ms= ms<10?"0"+ms:ms;
+      document.getElementById("Clock").innerHTML = h + ":" + m + ":" + s + " " + ap;
+      setTimeout(showtime, 0);
+    }
+    showtime();
+  </script>
+</html>
